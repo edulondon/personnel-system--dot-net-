@@ -1,0 +1,557 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="niapsModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="niapsEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="assetRecords" EntityType="niapsModel.assetRecord" />
+    <EntitySet Name="assetUpdateHistories" EntityType="niapsModel.assetUpdateHistory" />
+    <EntitySet Name="employmentRecords" EntityType="niapsModel.employmentRecord" />
+    <EntitySet Name="insuranceCompanies" EntityType="niapsModel.insuranceCompany" />
+    <EntitySet Name="leaves" EntityType="niapsModel.leave" />
+    <EntitySet Name="leaveDays" EntityType="niapsModel.leaveDay" />
+    <EntitySet Name="qualifications" EntityType="niapsModel.qualification" />
+    <EntitySet Name="queries" EntityType="niapsModel.query" />
+    <EntitySet Name="questions" EntityType="niapsModel.question" />
+    <EntitySet Name="staffNextOfKins" EntityType="niapsModel.staffNextOfKin" />
+    <EntitySet Name="staffRecords" EntityType="niapsModel.staffRecord" />
+    <EntitySet Name="staffReviews" EntityType="niapsModel.staffReview" />
+    <EntitySet Name="staffUpdateHistories" EntityType="niapsModel.staffUpdateHistory" />
+    <EntitySet Name="users" EntityType="niapsModel.user" />
+    <AssociationSet Name="FK_assetid_ToAssetRecord" Association="niapsModel.FK_assetid_ToAssetRecord">
+      <End Role="assetRecord" EntitySet="assetRecords" />
+      <End Role="assetUpdateHistory" EntitySet="assetUpdateHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_staffId_emp" Association="niapsModel.FK_staffId_emp">
+      <End Role="staffRecord" EntitySet="staffRecords" />
+      <End Role="employmentRecord" EntitySet="employmentRecords" />
+    </AssociationSet>
+    <AssociationSet Name="FK_staffId_ToLeave" Association="niapsModel.FK_staffId_ToLeave">
+      <End Role="staffRecord" EntitySet="staffRecords" />
+      <End Role="leave" EntitySet="leaves" />
+    </AssociationSet>
+    <AssociationSet Name="FK_staffId_qualification" Association="niapsModel.FK_staffId_qualification">
+      <End Role="staffRecord" EntitySet="staffRecords" />
+      <End Role="qualification" EntitySet="qualifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_qstId" Association="niapsModel.FK_qstId">
+      <End Role="question" EntitySet="questions" />
+      <End Role="staffReview" EntitySet="staffReviews" />
+    </AssociationSet>
+    <AssociationSet Name="FK_staffId" Association="niapsModel.FK_staffId">
+      <End Role="staffRecord" EntitySet="staffRecords" />
+      <End Role="staffNextOfKin" EntitySet="staffNextOfKins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_staffId_history" Association="niapsModel.FK_staffId_history">
+      <End Role="staffRecord" EntitySet="staffRecords" />
+      <End Role="staffUpdateHistory" EntitySet="staffUpdateHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StaffId_Review" Association="niapsModel.FK_StaffId_Review">
+      <End Role="staffRecord" EntitySet="staffRecords" />
+      <End Role="staffReview" EntitySet="staffReviews" />
+    </AssociationSet>
+    <FunctionImport Name="viewSingleStaff" ReturnType="Collection(niapsModel.viewSingleStaff_Result)">
+      <Parameter Name="staffId" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="issuedQueries" EntityType="niapsModel.issuedQuery" />
+    <AssociationSet Name="FK_staffId_query" Association="niapsModel.FK_staffId_query">
+      <End Role="staffRecord" EntitySet="staffRecords" />
+      <End Role="issuedQuery" EntitySet="issuedQueries" />
+    </AssociationSet>
+    <EntitySet Name="LGAs" EntityType="niapsModel.LGA" />
+    <EntitySet Name="states" EntityType="niapsModel.state" />
+    <AssociationSet Name="stateCode" Association="niapsModel.stateCode">
+      <End Role="state" EntitySet="states" />
+      <End Role="LGA" EntitySet="LGAs" />
+    </AssociationSet>
+    <EntitySet Name="pendingLeaves" EntityType="niapsModel.pendingLeave" />
+    <AssociationSet Name="FK_pendingLeave_staffRecord" Association="niapsModel.FK_pendingLeave_staffRecord">
+      <End Role="staffRecord" EntitySet="staffRecords" />
+      <End Role="pendingLeave" EntitySet="pendingLeaves" />
+    </AssociationSet>
+    <FunctionImport Name="viewSingleStaff1" ReturnType="Collection(niapsModel.viewSingleStaff1_Result)">
+      <Parameter Name="staffId" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="news" EntityType="niapsModel.news" />
+    <EntitySet Name="adminUsers" EntityType="niapsModel.adminUser" />
+    <EntitySet Name="currentStaffRecords" EntityType="niapsModel.currentStaffRecord" />
+    <AssociationSet Name="currentStaffRecFK" Association="niapsModel.currentStaffRecFK">
+      <End Role="staffRecord" EntitySet="staffRecords" />
+      <End Role="currentStaffRecord" EntitySet="currentStaffRecords" />
+    </AssociationSet>
+    <EntitySet Name="answerToQuestions" EntityType="niapsModel.answerToQuestion" />
+    <AssociationSet Name="staffId_ans_key" Association="niapsModel.staffId_ans_key">
+      <End Role="staffRecord" EntitySet="staffRecords" />
+      <End Role="answerToQuestion" EntitySet="answerToQuestions" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="assetRecord">
+    <Key>
+      <PropertyRef Name="assetId" />
+    </Key>
+    <Property Name="assetId" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="datePurchased" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="receivingDept" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="cost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="remark" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="insurance" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="policyNumber" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="sumInsured" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="coverDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="expirydate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="assetUpdateHistories" Relationship="niapsModel.FK_assetid_ToAssetRecord" FromRole="assetRecord" ToRole="assetUpdateHistory" />
+    <Property Type="String" Name="vendor" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="assetUpdateHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="assetId" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="updateDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="assetRecord" Relationship="niapsModel.FK_assetid_ToAssetRecord" FromRole="assetUpdateHistory" ToRole="assetRecord" />
+    <Property Type="String" Name="message" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="employmentRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="staffId" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="company" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="startDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="endDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="staffRecord" Relationship="niapsModel.FK_staffId_emp" FromRole="employmentRecord" ToRole="staffRecord" />
+    <Property Type="String" Name="postHeld" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="duties" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="insuranceCompany">
+    <Key>
+      <PropertyRef Name="insuranceCode" />
+    </Key>
+    <Property Name="insuranceCode" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="nameOfCompany" Type="String" Nullable="false" MaxLength="70" Unicode="false" FixedLength="false" />
+    <Property Name="address" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="leave">
+    <Key>
+      <PropertyRef Name="leaveId" />
+    </Key>
+    <Property Name="leaveId" Type="Int32" Nullable="false" />
+    <Property Name="staffId" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="startDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="endDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="comment" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="staffRecord" Relationship="niapsModel.FK_staffId_ToLeave" FromRole="leave" ToRole="staffRecord" />
+    <Property Type="Int32" Name="leaveDaysGranted" />
+    <Property Type="Int32" Name="totalUnusedLeaveDays" />
+  </EntityType>
+  <EntityType Name="leaveDay">
+    <Key>
+      <PropertyRef Name="leaveDaysId" />
+    </Key>
+    <Property Name="leaveDaysId" Type="Int32" Nullable="false" />
+    <Property Name="designation" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="noOfLeaveDays" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="qualification">
+    <Key>
+      <PropertyRef Name="qualificationId" />
+    </Key>
+    <Property Name="qualificationId" Type="Int32" Nullable="false" />
+    <Property Name="staffId" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="dateObtained" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="institution" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="typeOfQualification" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="staffRecord" Relationship="niapsModel.FK_staffId_qualification" FromRole="qualification" ToRole="staffRecord" />
+  </EntityType>
+  <EntityType Name="query">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="staffId" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Type="String" Name="reply" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="natureOfQuery" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dateIssued" Nullable="false" Precision="0" />
+    <Property Type="DateTime" Name="dateReplied" Precision="0" />
+    <Property Type="String" Name="actionTaken" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="issuedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="question">
+    <Key>
+      <PropertyRef Name="qstId" />
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="qstId" Type="Int32" />
+    <NavigationProperty Name="staffReviews" Relationship="niapsModel.FK_qstId" FromRole="question" ToRole="staffReview" />
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="question1" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="staffNextOfKin">
+    <Key>
+      <PropertyRef Name="staffNextOfKinId" />
+    </Key>
+    <Property Name="staffNextOfKinId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="staffId" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="fName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="lname" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="gender" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="relationship" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="contactMobile" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="staffRecord" Relationship="niapsModel.FK_staffId" FromRole="staffNextOfKin" ToRole="staffRecord" />
+  </EntityType>
+  <EntityType Name="staffRecord">
+    <Key>
+      <PropertyRef Name="staffId" />
+    </Key>
+    <Property Name="staffId" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="fName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="lName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="gender" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="dateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Lga" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="state" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="passport" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="mobile" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="marritalStatus" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="formOfIdentification" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="middleName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="age" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="employmentRecords" Relationship="niapsModel.FK_staffId_emp" FromRole="staffRecord" ToRole="employmentRecord" />
+    <NavigationProperty Name="leaves" Relationship="niapsModel.FK_staffId_ToLeave" FromRole="staffRecord" ToRole="leave" />
+    <NavigationProperty Name="qualifications" Relationship="niapsModel.FK_staffId_qualification" FromRole="staffRecord" ToRole="qualification" />
+    <NavigationProperty Name="staffNextOfKins" Relationship="niapsModel.FK_staffId" FromRole="staffRecord" ToRole="staffNextOfKin" />
+    <NavigationProperty Name="staffUpdateHistories" Relationship="niapsModel.FK_staffId_history" FromRole="staffRecord" ToRole="staffUpdateHistory" />
+    <NavigationProperty Name="staffReviews" Relationship="niapsModel.FK_StaffId_Review" FromRole="staffRecord" ToRole="staffReview" />
+    <Property Type="String" Name="idNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="issuedQueries" Relationship="niapsModel.FK_staffId_query" FromRole="staffRecord" ToRole="issuedQuery" />
+    <NavigationProperty Name="pendingLeaves" Relationship="niapsModel.FK_pendingLeave_staffRecord" FromRole="staffRecord" ToRole="pendingLeave" />
+    <NavigationProperty Name="currentStaffRecords" Relationship="niapsModel.currentStaffRecFK" FromRole="staffRecord" ToRole="currentStaffRecord" />
+    <NavigationProperty Name="answerToQuestions" Relationship="niapsModel.staffId_ans_key" FromRole="staffRecord" ToRole="answerToQuestion" />
+  </EntityType>
+  <EntityType Name="staffReview">
+    <Key>
+      <PropertyRef Name="reviewId" />
+    </Key>
+    <Property Name="reviewId" Type="Int32" Nullable="false" />
+    <Property Name="staffId" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="training_workShop" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+    <Property Name="dateObtained" Type="DateTime" Precision="0" />
+    <Property Name="deatailedScheduleDuties" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="comments" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ReviewDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="staffRecord" Relationship="niapsModel.FK_StaffId_Review" FromRole="staffReview" ToRole="staffRecord" />
+  </EntityType>
+  <EntityType Name="staffUpdateHistory">
+    <Key>
+      <PropertyRef Name="historyId" />
+    </Key>
+    <Property Name="historyId" Type="Int32" Nullable="false" />
+    <Property Name="staffId" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="updatedBy" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="updatDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="staffRecord" Relationship="niapsModel.FK_staffId_history" FromRole="staffUpdateHistory" ToRole="staffRecord" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="role" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Type="String" Name="status" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_assetid_ToAssetRecord">
+    <End Role="assetRecord" Type="niapsModel.assetRecord" Multiplicity="1" />
+    <End Role="assetUpdateHistory" Type="niapsModel.assetUpdateHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="assetRecord">
+        <PropertyRef Name="assetId" />
+      </Principal>
+      <Dependent Role="assetUpdateHistory">
+        <PropertyRef Name="assetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_staffId_emp">
+    <End Role="staffRecord" Type="niapsModel.staffRecord" Multiplicity="0..1" />
+    <End Role="employmentRecord" Type="niapsModel.employmentRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="employmentRecord">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_staffId_ToLeave">
+    <End Role="staffRecord" Type="niapsModel.staffRecord" Multiplicity="1" />
+    <End Role="leave" Type="niapsModel.leave" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="leave">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_staffId_qualification">
+    <End Role="staffRecord" Type="niapsModel.staffRecord" Multiplicity="1" />
+    <End Role="qualification" Type="niapsModel.qualification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="qualification">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_qstId">
+    <End Role="question" Type="niapsModel.question" Multiplicity="1" />
+    <End Role="staffReview" Type="niapsModel.staffReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="question">
+        <PropertyRef Name="qstId" />
+      </Principal>
+      <Dependent Role="staffReview">
+        <PropertyRef Name="questionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_staffId">
+    <End Role="staffRecord" Type="niapsModel.staffRecord" Multiplicity="1" />
+    <End Role="staffNextOfKin" Type="niapsModel.staffNextOfKin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="staffNextOfKin">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_staffId_history">
+    <End Role="staffRecord" Type="niapsModel.staffRecord" Multiplicity="1" />
+    <End Role="staffUpdateHistory" Type="niapsModel.staffUpdateHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="staffUpdateHistory">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StaffId_Review">
+    <End Role="staffRecord" Type="niapsModel.staffRecord" Multiplicity="1" />
+    <End Role="staffReview" Type="niapsModel.staffReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="staffReview">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="viewSingleStaff_Result">
+    <Property Type="String" Name="staffId" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="fName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="lName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="gender" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="designation" Nullable="false" MaxLength="30" />
+    <Property Type="DateTime" Name="dateOfBirth" Nullable="false" />
+    <Property Type="DateTime" Name="dateOfEmployment" Nullable="false" />
+    <Property Type="String" Name="address" Nullable="false" />
+    <Property Type="String" Name="Lga" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="state" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="passport" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="mobile" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="marritalStatus" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="formOfIdentification" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="middleName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="age" Nullable="false" />
+    <Property Type="String" Name="status" Nullable="false" MaxLength="15" />
+  </ComplexType>
+  <EntityType Name="issuedQuery">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="staffId" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="queryBody" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="status" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dateIssued" Nullable="false" Precision="0" />
+    <NavigationProperty Name="staffRecord" Relationship="niapsModel.FK_staffId_query" FromRole="issuedQuery" ToRole="staffRecord" />
+  </EntityType>
+  <Association Name="FK_staffId_query">
+    <End Type="niapsModel.staffRecord" Role="staffRecord" Multiplicity="1" />
+    <End Type="niapsModel.issuedQuery" Role="issuedQuery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="issuedQuery">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="LGA">
+    <Key>
+      <PropertyRef Name="LGACode" />
+    </Key>
+    <Property Type="Int32" Name="LGACode" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="stateCode" Nullable="false" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="state" Relationship="niapsModel.stateCode" FromRole="LGA" ToRole="state" />
+  </EntityType>
+  <EntityType Name="state">
+    <Key>
+      <PropertyRef Name="stateCode" />
+    </Key>
+    <Property Type="String" Name="stateCode" Nullable="false" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="state1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="LGAs" Relationship="niapsModel.stateCode" FromRole="state" ToRole="LGA" />
+  </EntityType>
+  <Association Name="stateCode">
+    <End Type="niapsModel.state" Role="state" Multiplicity="1" />
+    <End Type="niapsModel.LGA" Role="LGA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="state">
+        <PropertyRef Name="stateCode" />
+      </Principal>
+      <Dependent Role="LGA">
+        <PropertyRef Name="stateCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="pendingLeave">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="staffId" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="staffPendingLeave" />
+    <NavigationProperty Name="staffRecord" Relationship="niapsModel.FK_pendingLeave_staffRecord" FromRole="pendingLeave" ToRole="staffRecord" />
+  </EntityType>
+  <Association Name="FK_pendingLeave_staffRecord">
+    <End Type="niapsModel.staffRecord" Role="staffRecord" Multiplicity="1" />
+    <End Type="niapsModel.pendingLeave" Role="pendingLeave" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="pendingLeave">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="viewSingleStaff1_Result">
+    <Property Type="String" Name="staffId" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="fName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="lName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="gender" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="designation" Nullable="false" MaxLength="30" />
+    <Property Type="DateTime" Name="dateOfBirth" Nullable="false" />
+    <Property Type="DateTime" Name="dateOfEmployment" Nullable="false" />
+    <Property Type="String" Name="address" Nullable="false" />
+    <Property Type="String" Name="Lga" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="state" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="passport" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="mobile" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="marritalStatus" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="formOfIdentification" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="middleName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="age" Nullable="false" />
+    <Property Type="String" Name="status" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="idNumber" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="news">
+    <Key>
+      <PropertyRef Name="newsId" />
+    </Key>
+    <Property Type="Int32" Name="newsId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="newsBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="message" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="postebBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="adminUser">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Type="Int32" Name="userId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="userName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="password" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="role" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="status" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="currentStaffRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="staffId" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="designation" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="department" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="qualification" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="date_Joined" Precision="0" />
+    <Property Type="String" Name="degree" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="otherQualification1" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="year1" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="otherQualification2" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="year2" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="probationPeriod" />
+    <Property Type="DateTime" Name="dateOfConfirmation" Precision="0" />
+    <NavigationProperty Name="staffRecord" Relationship="niapsModel.currentStaffRecFK" FromRole="currentStaffRecord" ToRole="staffRecord" />
+  </EntityType>
+  <Association Name="currentStaffRecFK">
+    <End Type="niapsModel.staffRecord" Role="staffRecord" Multiplicity="0..1" />
+    <End Type="niapsModel.currentStaffRecord" Role="currentStaffRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="currentStaffRecord">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="answerToQuestion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="answerToQuestion1" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="qstId" Nullable="false" />
+    <Property Type="DateTime" Name="date" Nullable="false" Precision="0" />
+    <Property Type="String" Name="staffId" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="staffRecord" Relationship="niapsModel.staffId_ans_key" FromRole="answerToQuestion" ToRole="staffRecord" />
+  </EntityType>
+  <Association Name="staffId_ans_key">
+    <End Type="niapsModel.staffRecord" Role="staffRecord" Multiplicity="1" />
+    <End Type="niapsModel.answerToQuestion" Role="answerToQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="answerToQuestion">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

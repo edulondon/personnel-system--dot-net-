@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="niapsModel1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="niapsModel1StoreContainer">
+    <EntitySet Name="activateReview" EntityType="niapsModel1.Store.activateReview" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="adminUser" EntityType="niapsModel1.Store.adminUser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="answerToQuestion" EntityType="niapsModel1.Store.answerToQuestion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="assetRecord" EntityType="niapsModel1.Store.assetRecord" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="assetUpdateHistory" EntityType="niapsModel1.Store.assetUpdateHistory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="currentStaffRecord" EntityType="niapsModel1.Store.currentStaffRecord" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="employmentRecord" EntityType="niapsModel1.Store.employmentRecord" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="indicator" EntityType="niapsModel1.Store.indicator" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="insuranceCompany" EntityType="niapsModel1.Store.insuranceCompany" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="issuedQuery" EntityType="niapsModel1.Store.issuedQuery" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="leave" EntityType="niapsModel1.Store.leave" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="leaveDays" EntityType="niapsModel1.Store.leaveDays" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LGA" EntityType="niapsModel1.Store.LGA" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="news" EntityType="niapsModel1.Store.news" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="pendingLeave" EntityType="niapsModel1.Store.pendingLeave" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="qualification" EntityType="niapsModel1.Store.qualification" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="queries" EntityType="niapsModel1.Store.queries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="question" EntityType="niapsModel1.Store.question" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="staffNextOfKin" EntityType="niapsModel1.Store.staffNextOfKin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="staffRecord" EntityType="niapsModel1.Store.staffRecord" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="staffReview" EntityType="niapsModel1.Store.staffReview" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="staffUpdateHistory" EntityType="niapsModel1.Store.staffUpdateHistory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="state" EntityType="niapsModel1.Store.state" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="user" EntityType="niapsModel1.Store.user" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="currentStaffRecFK" Association="niapsModel1.Store.currentStaffRecFK">
+      <End Role="staffRecord" EntitySet="staffRecord" />
+      <End Role="currentStaffRecord" EntitySet="currentStaffRecord" />
+    </AssociationSet>
+    <AssociationSet Name="FK_assetid_ToAssetRecord" Association="niapsModel1.Store.FK_assetid_ToAssetRecord">
+      <End Role="assetRecord" EntitySet="assetRecord" />
+      <End Role="assetUpdateHistory" EntitySet="assetUpdateHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pendingLeave_staffRecord" Association="niapsModel1.Store.FK_pendingLeave_staffRecord">
+      <End Role="staffRecord" EntitySet="staffRecord" />
+      <End Role="pendingLeave" EntitySet="pendingLeave" />
+    </AssociationSet>
+    <AssociationSet Name="FK_staffId" Association="niapsModel1.Store.FK_staffId">
+      <End Role="staffRecord" EntitySet="staffRecord" />
+      <End Role="staffNextOfKin" EntitySet="staffNextOfKin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_staffId_emp" Association="niapsModel1.Store.FK_staffId_emp">
+      <End Role="staffRecord" EntitySet="staffRecord" />
+      <End Role="employmentRecord" EntitySet="employmentRecord" />
+    </AssociationSet>
+    <AssociationSet Name="FK_staffId_history" Association="niapsModel1.Store.FK_staffId_history">
+      <End Role="staffRecord" EntitySet="staffRecord" />
+      <End Role="staffUpdateHistory" EntitySet="staffUpdateHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_staffId_qualification" Association="niapsModel1.Store.FK_staffId_qualification">
+      <End Role="staffRecord" EntitySet="staffRecord" />
+      <End Role="qualification" EntitySet="qualification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_staffId_query" Association="niapsModel1.Store.FK_staffId_query">
+      <End Role="staffRecord" EntitySet="staffRecord" />
+      <End Role="issuedQuery" EntitySet="issuedQuery" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StaffId_Review" Association="niapsModel1.Store.FK_StaffId_Review">
+      <End Role="staffRecord" EntitySet="staffRecord" />
+      <End Role="staffReview" EntitySet="staffReview" />
+    </AssociationSet>
+    <AssociationSet Name="FK_staffId_ToLeave" Association="niapsModel1.Store.FK_staffId_ToLeave">
+      <End Role="staffRecord" EntitySet="staffRecord" />
+      <End Role="leave" EntitySet="leave" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_staffId" Association="niapsModel1.Store.FK_user_staffId">
+      <End Role="staffRecord" EntitySet="staffRecord" />
+      <End Role="user" EntitySet="user" />
+    </AssociationSet>
+    <AssociationSet Name="staffId_ans_key" Association="niapsModel1.Store.staffId_ans_key">
+      <End Role="staffRecord" EntitySet="staffRecord" />
+      <End Role="answerToQuestion" EntitySet="answerToQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="stateCode" Association="niapsModel1.Store.stateCode">
+      <End Role="state" EntitySet="state" />
+      <End Role="LGA" EntitySet="LGA" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="activateReview">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="reviewId" Type="int" />
+    <Property Name="status" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="adminUser">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="password" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="role" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="status" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="full name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="answerToQuestion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="quarter" Type="varchar" MaxLength="20" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="staffId" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="answer1" Type="varchar(max)" />
+    <Property Name="answer2" Type="varchar(max)" />
+    <Property Name="answer3" Type="varchar(max)" />
+    <Property Name="answer4" Type="varchar(max)" />
+    <Property Name="answer5" Type="varchar(max)" />
+    <Property Name="answer6" Type="varchar(max)" />
+    <Property Name="answer7" Type="varchar(max)" />
+    <Property Name="answer8" Type="varchar(max)" />
+    <Property Name="answer9" Type="varchar(max)" />
+    <Property Name="answer10" Type="varchar(max)" />
+    <Property Name="answer11" Type="varchar(max)" />
+    <Property Name="answer12" Type="varchar(max)" />
+    <Property Name="answer13" Type="varchar(max)" />
+    <Property Name="answer14" Type="varchar(max)" />
+    <Property Name="answer15" Type="varchar(max)" />
+    <Property Name="answer16" Type="varchar(max)" />
+    <Property Name="answer17" Type="varchar(max)" />
+    <Property Name="answer18" Type="varchar(max)" />
+    <Property Name="answer19" Type="varchar(max)" />
+    <Property Name="answer20" Type="varchar(max)" />
+    <Property Name="year" Type="varchar" MaxLength="10" />
+    <Property Name="indicator" Type="int" />
+  </EntityType>
+  <EntityType Name="assetRecord">
+    <Key>
+      <PropertyRef Name="assetId" />
+    </Key>
+    <Property Name="assetId" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="datePurchased" Type="date" Nullable="false" />
+    <Property Name="receivingDept" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="cost" Type="money" Nullable="false" />
+    <Property Name="remark" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="insurance" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="policyNumber" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="sumInsured" Type="money" Nullable="false" />
+    <Property Name="coverDate" Type="date" Nullable="false" />
+    <Property Name="expirydate" Type="date" Nullable="false" />
+    <Property Name="status" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="vendor" Type="varchar" MaxLength="50" />
+    <Property Name="premium" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="assetUpdateHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="assetId" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="updateDate" Type="date" Nullable="false" />
+    <Property Name="message" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="currentStaffRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="staffId" Type="nvarchar" MaxLength="20" />
+    <Property Name="designation" Type="varchar" MaxLength="50" />
+    <Property Name="department" Type="varchar" MaxLength="50" />
+    <Property Name="qualification" Type="varchar" MaxLength="50" />
+    <Property Name="date Joined" Type="date" />
+    <Property Name="degree" Type="varchar" MaxLength="50" />
+    <Property Name="probationPeriod" Type="int" />
+    <Property Name="dateOfConfirmation" Type="date" />
+  </EntityType>
+  <EntityType Name="employmentRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="staffId" Type="nvarchar" MaxLength="20" />
+    <Property Name="company" Type="varchar" MaxLength="50" />
+    <Property Name="startDate" Type="date" Nullable="false" />
+    <Property Name="endDate" Type="date" />
+    <Property Name="postHeld" Type="varchar" MaxLength="40" />
+    <Property Name="duties" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="indicator">
+    <Key>
+      <PropertyRef Name="IndicatorId" />
+    </Key>
+    <Property Name="IndicatorId" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="quarter" Type="varchar" MaxLength="10" />
+    <Property Name="year" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="insuranceCompany">
+    <Key>
+      <PropertyRef Name="insuranceCode" />
+    </Key>
+    <Property Name="insuranceCode" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="nameOfCompany" Type="varchar" Nullable="false" MaxLength="70" />
+    <Property Name="address" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="issuedQuery">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="staffId" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="queryBody" Type="varchar(max)" Nullable="false" />
+    <Property Name="status" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="dateIssued" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="leave">
+    <Key>
+      <PropertyRef Name="leaveId" />
+    </Key>
+    <Property Name="leaveId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="staffId" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="startDate" Type="date" Nullable="false" />
+    <Property Name="endDate" Type="date" Nullable="false" />
+    <Property Name="comment" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="leaveDaysGranted" Type="int" />
+    <Property Name="totalUnusedLeaveDays" Type="int" />
+  </EntityType>
+  <EntityType Name="leaveDays">
+    <Key>
+      <PropertyRef Name="leaveDaysId" />
+    </Key>
+    <Property Name="leaveDaysId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="designation" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="noOfLeaveDays" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LGA">
+    <Key>
+      <PropertyRef Name="LGACode" />
+    </Key>
+    <Property Name="LGACode" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="stateCode" Type="nchar" Nullable="false" MaxLength="4" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="news">
+    <Key>
+      <PropertyRef Name="newsId" />
+    </Key>
+    <Property Name="newsId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="newsBy" Type="varchar" MaxLength="50" />
+    <Property Name="message" Type="varchar(max)" Nullable="false" />
+    <Property Name="postebBy" Type="varchar" MaxLength="50" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pendingLeave">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="staffId" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="staffPendingLeave" Type="int" />
+  </EntityType>
+  <EntityType Name="qualification">
+    <Key>
+      <PropertyRef Name="qualificationId" />
+    </Key>
+    <Property Name="qualificationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="staffId" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="dateObtained" Type="date" Nullable="false" />
+    <Property Name="institution" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="typeOfQualification" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="queries">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="staffId" Type="nvarchar" MaxLength="20" />
+    <Property Name="natureOfQuery" Type="varchar" MaxLength="150" />
+    <Property Name="status" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="dateIssued" Type="date" Nullable="false" />
+    <Property Name="dateReplied" Type="date" />
+    <Property Name="reply" Type="varchar(max)" />
+    <Property Name="actionTaken" Type="varchar" MaxLength="50" />
+    <Property Name="issuedBy" Type="varchar" MaxLength="50" />
+    <Property Name="disciplinaryEffectDate" Type="date" />
+    <Property Name="index" Type="int" />
+  </EntityType>
+  <EntityType Name="question">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="question" Type="varchar(max)" Nullable="false" />
+    <Property Name="qstId" Type="int" />
+  </EntityType>
+  <EntityType Name="staffNextOfKin">
+    <Key>
+      <PropertyRef Name="staffNextOfKinId" />
+    </Key>
+    <Property Name="staffNextOfKinId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="staffId" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="fName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="lname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="gender" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="relationship" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="contactMobile" Type="varchar" Nullable="false" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="staffRecord">
+    <Key>
+      <PropertyRef Name="staffId" />
+    </Key>
+    <Property Name="staffId" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="fName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="lName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="gender" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="dateOfBirth" Type="date" Nullable="false" />
+    <Property Name="address" Type="varchar(max)" Nullable="false" />
+    <Property Name="Lga" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="state" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="passport" Type="varchar" MaxLength="150" />
+    <Property Name="mobile" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="email" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="marritalStatus" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="formOfIdentification" Type="varchar" MaxLength="50" />
+    <Property Name="middleName" Type="varchar" MaxLength="50" />
+    <Property Name="age" Type="int" Nullable="false" />
+    <Property Name="status" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="idNumber" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="staffReview">
+    <Key>
+      <PropertyRef Name="reviewId" />
+    </Key>
+    <Property Name="reviewId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="staffId" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="training_workShop" Type="varchar" MaxLength="70" />
+    <Property Name="dateObtained" Type="date" />
+    <Property Name="deatailedScheduleDuties" Type="varchar(max)" Nullable="false" />
+    <Property Name="comments" Type="varchar(max)" />
+    <Property Name="ReviewDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="staffUpdateHistory">
+    <Key>
+      <PropertyRef Name="historyId" />
+    </Key>
+    <Property Name="historyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="staffId" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="updatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="updatDate" Type="date" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="state">
+    <Key>
+      <PropertyRef Name="stateCode" />
+    </Key>
+    <Property Name="stateCode" Type="nchar" Nullable="false" MaxLength="4" />
+    <Property Name="state" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="password" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="role" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="status" Type="varchar" MaxLength="20" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="staffId" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="currentStaffRecFK">
+    <End Role="staffRecord" Type="niapsModel1.Store.staffRecord" Multiplicity="0..1" />
+    <End Role="currentStaffRecord" Type="niapsModel1.Store.currentStaffRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="currentStaffRecord">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_assetid_ToAssetRecord">
+    <End Role="assetRecord" Type="niapsModel1.Store.assetRecord" Multiplicity="1" />
+    <End Role="assetUpdateHistory" Type="niapsModel1.Store.assetUpdateHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="assetRecord">
+        <PropertyRef Name="assetId" />
+      </Principal>
+      <Dependent Role="assetUpdateHistory">
+        <PropertyRef Name="assetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pendingLeave_staffRecord">
+    <End Role="staffRecord" Type="niapsModel1.Store.staffRecord" Multiplicity="1" />
+    <End Role="pendingLeave" Type="niapsModel1.Store.pendingLeave" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="pendingLeave">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_staffId">
+    <End Role="staffRecord" Type="niapsModel1.Store.staffRecord" Multiplicity="1" />
+    <End Role="staffNextOfKin" Type="niapsModel1.Store.staffNextOfKin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="staffNextOfKin">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_staffId_emp">
+    <End Role="staffRecord" Type="niapsModel1.Store.staffRecord" Multiplicity="0..1" />
+    <End Role="employmentRecord" Type="niapsModel1.Store.employmentRecord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="employmentRecord">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_staffId_history">
+    <End Role="staffRecord" Type="niapsModel1.Store.staffRecord" Multiplicity="1" />
+    <End Role="staffUpdateHistory" Type="niapsModel1.Store.staffUpdateHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="staffUpdateHistory">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_staffId_qualification">
+    <End Role="staffRecord" Type="niapsModel1.Store.staffRecord" Multiplicity="1" />
+    <End Role="qualification" Type="niapsModel1.Store.qualification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="qualification">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_staffId_query">
+    <End Role="staffRecord" Type="niapsModel1.Store.staffRecord" Multiplicity="1" />
+    <End Role="issuedQuery" Type="niapsModel1.Store.issuedQuery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="issuedQuery">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StaffId_Review">
+    <End Role="staffRecord" Type="niapsModel1.Store.staffRecord" Multiplicity="1" />
+    <End Role="staffReview" Type="niapsModel1.Store.staffReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="staffReview">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_staffId_ToLeave">
+    <End Role="staffRecord" Type="niapsModel1.Store.staffRecord" Multiplicity="1" />
+    <End Role="leave" Type="niapsModel1.Store.leave" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="leave">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_staffId">
+    <End Role="staffRecord" Type="niapsModel1.Store.staffRecord" Multiplicity="0..1" />
+    <End Role="user" Type="niapsModel1.Store.user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="staffId_ans_key">
+    <End Role="staffRecord" Type="niapsModel1.Store.staffRecord" Multiplicity="1" />
+    <End Role="answerToQuestion" Type="niapsModel1.Store.answerToQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staffRecord">
+        <PropertyRef Name="staffId" />
+      </Principal>
+      <Dependent Role="answerToQuestion">
+        <PropertyRef Name="staffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="stateCode">
+    <End Role="state" Type="niapsModel1.Store.state" Multiplicity="1" />
+    <End Role="LGA" Type="niapsModel1.Store.LGA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="state">
+        <PropertyRef Name="stateCode" />
+      </Principal>
+      <Dependent Role="LGA">
+        <PropertyRef Name="stateCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

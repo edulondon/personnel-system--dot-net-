@@ -1,0 +1,91 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="niaps_ver_1._0.PrivateWeb.admin" %>
+
+<!DOCTYPE html>
+
+<html">
+<head runat="server">
+    <title>NIAPS</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content ="width=device-width, initial-scale=1.0"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+     <link href="../Content/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-datepicker3.css" rel="stylesheet" />
+    <link href="../Content/style.css" rel="stylesheet" />
+</head>
+<body style="background-color:forestgreen; color:black;">
+   <div class="navbar navbar-static-top navbar-inner navbar-inverse list-unstyled">
+				      <div class="container">
+					  
+					   <div class="container">
+                          <div class="col-lg-6">
+					   <a href="#" class="brand h1" style="color:lawngreen"><h1>NIA Personnel System</h1></a>
+                              </div>
+                          <div class="col-lg-6">
+					    <a href="#" class="brand pull-right navbar-static-top"><img src="../images/NiaLogo.jpg" style="height: 103px; width: 107px" /></a>
+                          </div>
+						 </div>
+						 
+					       <div class = "navbar-collapse navHeaderCollapse">
+						   
+						   <ul class="nav navbar-nav navbar-right pull-left">
+						     <li class="dropdown"><a href="#" class = "dropdown-toggle" data-toggle = "dropdown">Activities<b class="caret"></b></a>
+                         <ul class = "dropdown-menu">
+                            <li><a href="createStaff.aspx">Staff Record</a></li>
+                            <li><a href="furtherQualification.aspx">Additional Qualification</a></li>
+                             <li><a href="createQuery.aspx">Issue Query</a></li>
+                             <li><a href="enterStaffPendingLeave.aspx">Outstanding Leave Days</a></li>
+                             <li><a href="updateEmpRec.aspx">Update Employment Record</a></li>
+                             <li><a href="updateLeave.aspx">Update Leave</a></li>
+                             <li><a href="updateS.aspx">Update Qualification</a></li>
+                            <li><a href="createLeave.aspx">Leave Records</a></li>
+                            <%--<li><a href="activateReview.aspx">De/Activate appraisal</a></li>--%>
+                        </ul>
+
+           </li>
+							  <li class="dropdown"><a href="#" class = "dropdown-toggle" data-toggle = "dropdown">Reports<b class="caret"></b></a>
+                        <ul class = "dropdown-menu">
+                            <li><a href="staffList.aspx">Staff</a></li>
+                            <li><a href="viewAsset.aspx">NIA Asset </a></li>
+                            <li><a href="viewLeave.aspx">Leave</a></li>
+                             <li><a href="viewQuery.aspx">Queries</a></li>
+                            <li><a href="viewStaffReview.aspx">view appraisal</a></li>
+                            
+                        </ul>
+           </li>
+							<li class="dropdown"><a href="#" class = "dropdown-toggle" data-toggle = "dropdown">My Account<b class="caret"></b></a>
+        <ul class = "dropdown-menu">
+            <li><a href="changePsw.aspx">Change Psw</a></li>
+            <li><a href="../PublicWeb/logout.aspx">Logout</a></li>
+        </ul>
+    </li>
+							
+						   </ul>
+						</div>
+					  
+				  </div>
+		</div>			
+     
+    <div class="container center-block" style="background-color:aliceblue; border-top-right-radius:2em; border-top-left-radius:2em">				
+    
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+        <footer class="navebar navbar-fixed-bottom">
+            <p style="color:white; background-color:black" class="text-center"> Copyright &copy; 2014, Nigeria Insurers Association, All Right Reserved</p>
+        </footer>
+    <script src="../Scripts/jquery-2.1.0.js"></script>    
+    <script src="../Scripts/bootstrap.min.js"></script>
+   
+    
+    <script src="../Scripts/bootstrap-datepicker.js"></script>
+
+    <script>
+
+        $('.datepicker').datepicker({});
+        </script>
+
+</body>
+</html>

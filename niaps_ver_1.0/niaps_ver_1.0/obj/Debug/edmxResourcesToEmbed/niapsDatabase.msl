@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="niapsModel1StoreContainer" CdmEntityContainer="niapsEntities1">
+    <EntitySetMapping Name="adminUsers">
+      <EntityTypeMapping TypeName="niapsModel1.adminUser">
+        <MappingFragment StoreEntitySet="adminUser">
+          <ScalarProperty Name="full_name" ColumnName="full name" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="answerToQuestions">
+      <EntityTypeMapping TypeName="niapsModel1.answerToQuestion">
+        <MappingFragment StoreEntitySet="answerToQuestion">
+          <ScalarProperty Name="indicator" ColumnName="indicator" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="quarter" ColumnName="quarter" />
+          <ScalarProperty Name="answer20" ColumnName="answer20" />
+          <ScalarProperty Name="answer19" ColumnName="answer19" />
+          <ScalarProperty Name="answer18" ColumnName="answer18" />
+          <ScalarProperty Name="answer17" ColumnName="answer17" />
+          <ScalarProperty Name="answer16" ColumnName="answer16" />
+          <ScalarProperty Name="answer15" ColumnName="answer15" />
+          <ScalarProperty Name="answer14" ColumnName="answer14" />
+          <ScalarProperty Name="answer13" ColumnName="answer13" />
+          <ScalarProperty Name="answer12" ColumnName="answer12" />
+          <ScalarProperty Name="answer11" ColumnName="answer11" />
+          <ScalarProperty Name="answer10" ColumnName="answer10" />
+          <ScalarProperty Name="answer9" ColumnName="answer9" />
+          <ScalarProperty Name="answer8" ColumnName="answer8" />
+          <ScalarProperty Name="answer7" ColumnName="answer7" />
+          <ScalarProperty Name="answer6" ColumnName="answer6" />
+          <ScalarProperty Name="answer5" ColumnName="answer5" />
+          <ScalarProperty Name="answer4" ColumnName="answer4" />
+          <ScalarProperty Name="answer3" ColumnName="answer3" />
+          <ScalarProperty Name="answer2" ColumnName="answer2" />
+          <ScalarProperty Name="answer1" ColumnName="answer1" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="staffId" ColumnName="staffId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="assetRecords">
+      <EntityTypeMapping TypeName="niapsModel1.assetRecord">
+        <MappingFragment StoreEntitySet="assetRecord">
+          <ScalarProperty Name="premium" ColumnName="premium" />
+          <ScalarProperty Name="assetId" ColumnName="assetId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="datePurchased" ColumnName="datePurchased" />
+          <ScalarProperty Name="receivingDept" ColumnName="receivingDept" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="insurance" ColumnName="insurance" />
+          <ScalarProperty Name="policyNumber" ColumnName="policyNumber" />
+          <ScalarProperty Name="sumInsured" ColumnName="sumInsured" />
+          <ScalarProperty Name="coverDate" ColumnName="coverDate" />
+          <ScalarProperty Name="expirydate" ColumnName="expirydate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="vendor" ColumnName="vendor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="assetUpdateHistories">
+      <EntityTypeMapping TypeName="niapsModel1.assetUpdateHistory">
+        <MappingFragment StoreEntitySet="assetUpdateHistory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="assetId" ColumnName="assetId" />
+          <ScalarProperty Name="updateDate" ColumnName="updateDate" />
+          <ScalarProperty Name="message" ColumnName="message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="currentStaffRecords">
+      <EntityTypeMapping TypeName="niapsModel1.currentStaffRecord">
+        <MappingFragment StoreEntitySet="currentStaffRecord">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="staffId" ColumnName="staffId" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="qualification" ColumnName="qualification" />
+          <ScalarProperty Name="date_Joined" ColumnName="date Joined" />
+          <ScalarProperty Name="degree" ColumnName="degree" />
+          <ScalarProperty Name="probationPeriod" ColumnName="probationPeriod" />
+          <ScalarProperty Name="dateOfConfirmation" ColumnName="dateOfConfirmation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employmentRecords">
+      <EntityTypeMapping TypeName="niapsModel1.employmentRecord">
+        <MappingFragment StoreEntitySet="employmentRecord">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="staffId" ColumnName="staffId" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="postHeld" ColumnName="postHeld" />
+          <ScalarProperty Name="duties" ColumnName="duties" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="insuranceCompanies">
+      <EntityTypeMapping TypeName="niapsModel1.insuranceCompany">
+        <MappingFragment StoreEntitySet="insuranceCompany">
+          <ScalarProperty Name="insuranceCode" ColumnName="insuranceCode" />
+          <ScalarProperty Name="nameOfCompany" ColumnName="nameOfCompany" />
+          <ScalarProperty Name="address" ColumnName="address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="issuedQueries">
+      <EntityTypeMapping TypeName="niapsModel1.issuedQuery">
+        <MappingFragment StoreEntitySet="issuedQuery">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="staffId" ColumnName="staffId" />
+          <ScalarProperty Name="queryBody" ColumnName="queryBody" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dateIssued" ColumnName="dateIssued" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="leaves">
+      <EntityTypeMapping TypeName="niapsModel1.leave">
+        <MappingFragment StoreEntitySet="leave">
+          <ScalarProperty Name="leaveId" ColumnName="leaveId" />
+          <ScalarProperty Name="staffId" ColumnName="staffId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="leaveDaysGranted" ColumnName="leaveDaysGranted" />
+          <ScalarProperty Name="totalUnusedLeaveDays" ColumnName="totalUnusedLeaveDays" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="leaveDays">
+      <EntityTypeMapping TypeName="niapsModel1.leaveDay">
+        <MappingFragment StoreEntitySet="leaveDays">
+          <ScalarProperty Name="leaveDaysId" ColumnName="leaveDaysId" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="noOfLeaveDays" ColumnName="noOfLeaveDays" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LGAs">
+      <EntityTypeMapping TypeName="niapsModel1.LGA">
+        <MappingFragment StoreEntitySet="LGA">
+          <ScalarProperty Name="LGACode" ColumnName="LGACode" />
+          <ScalarProperty Name="stateCode" ColumnName="stateCode" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="news">
+      <EntityTypeMapping TypeName="niapsModel1.news">
+        <MappingFragment StoreEntitySet="news">
+          <ScalarProperty Name="newsId" ColumnName="newsId" />
+          <ScalarProperty Name="newsBy" ColumnName="newsBy" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="postebBy" ColumnName="postebBy" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pendingLeaves">
+      <EntityTypeMapping TypeName="niapsModel1.pendingLeave">
+        <MappingFragment StoreEntitySet="pendingLeave">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="staffId" ColumnName="staffId" />
+          <ScalarProperty Name="staffPendingLeave" ColumnName="staffPendingLeave" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qualifications">
+      <EntityTypeMapping TypeName="niapsModel1.qualification">
+        <MappingFragment StoreEntitySet="qualification">
+          <ScalarProperty Name="qualificationId" ColumnName="qualificationId" />
+          <ScalarProperty Name="staffId" ColumnName="staffId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="dateObtained" ColumnName="dateObtained" />
+          <ScalarProperty Name="institution" ColumnName="institution" />
+          <ScalarProperty Name="typeOfQualification" ColumnName="typeOfQualification" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="queries">
+      <EntityTypeMapping TypeName="niapsModel1.query">
+        <MappingFragment StoreEntitySet="queries">
+          <ScalarProperty Name="index" ColumnName="index" />
+          <ScalarProperty Name="disciplinaryEffectDate" ColumnName="disciplinaryEffectDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="staffId" ColumnName="staffId" />
+          <ScalarProperty Name="natureOfQuery" ColumnName="natureOfQuery" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dateIssued" ColumnName="dateIssued" />
+          <ScalarProperty Name="dateReplied" ColumnName="dateReplied" />
+          <ScalarProperty Name="reply" ColumnName="reply" />
+          <ScalarProperty Name="actionTaken" ColumnName="actionTaken" />
+          <ScalarProperty Name="issuedBy" ColumnName="issuedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="questions">
+      <EntityTypeMapping TypeName="niapsModel1.question">
+        <MappingFragment StoreEntitySet="question">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="question1" ColumnName="question" />
+          <ScalarProperty Name="qstId" ColumnName="qstId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="staffNextOfKins">
+      <EntityTypeMapping TypeName="niapsModel1.staffNextOfKin">
+        <MappingFragment StoreEntitySet="staffNextOfKin">
+          <ScalarProperty Name="staffNextOfKinId" ColumnName="staffNextOfKinId" />
+          <ScalarProperty Name="staffId" ColumnName="staffId" />
+          <ScalarProperty Name="fName" ColumnName="fName" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="relationship" ColumnName="relationship" />
+          <ScalarProperty Name="contactMobile" ColumnName="contactMobile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="staffRecords">
+      <EntityTypeMapping TypeName="niapsModel1.staffRecord">
+        <MappingFragment StoreEntitySet="staffRecord">
+          <ScalarProperty Name="staffId" ColumnName="staffId" />
+          <ScalarProperty Name="fName" ColumnName="fName" />
+          <ScalarProperty Name="lName" ColumnName="lName" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="Lga" ColumnName="Lga" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="passport" ColumnName="passport" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="marritalStatus" ColumnName="marritalStatus" />
+          <ScalarProperty Name="formOfIdentification" ColumnName="formOfIdentification" />
+          <ScalarProperty Name="middleName" ColumnName="middleName" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="idNumber" ColumnName="idNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="staffReviews">
+      <EntityTypeMapping TypeName="niapsModel1.staffReview">
+        <MappingFragment StoreEntitySet="staffReview">
+          <ScalarProperty Name="reviewId" ColumnName="reviewId" />
+          <ScalarProperty Name="staffId" ColumnName="staffId" />
+          <ScalarProperty Name="training_workShop" ColumnName="training_workShop" />
+          <ScalarProperty Name="dateObtained" ColumnName="dateObtained" />
+          <ScalarProperty Name="deatailedScheduleDuties" ColumnName="deatailedScheduleDuties" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="ReviewDate" ColumnName="ReviewDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="staffUpdateHistories">
+      <EntityTypeMapping TypeName="niapsModel1.staffUpdateHistory">
+        <MappingFragment StoreEntitySet="staffUpdateHistory">
+          <ScalarProperty Name="historyId" ColumnName="historyId" />
+          <ScalarProperty Name="staffId" ColumnName="staffId" />
+          <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+          <ScalarProperty Name="updatDate" ColumnName="updatDate" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="states">
+      <EntityTypeMapping TypeName="niapsModel1.state">
+        <MappingFragment StoreEntitySet="state">
+          <ScalarProperty Name="stateCode" ColumnName="stateCode" />
+          <ScalarProperty Name="state1" ColumnName="state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="niapsModel1.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="staffId" ColumnName="staffId" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="activateReviews">
+      <EntityTypeMapping TypeName="niapsModel1.activateReview">
+        <MappingFragment StoreEntitySet="activateReview">
+          <ScalarProperty Name="reviewId" ColumnName="reviewId" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="indicators">
+      <EntityTypeMapping TypeName="niapsModel1.indicator">
+        <MappingFragment StoreEntitySet="indicator">
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="quarter" ColumnName="quarter" />
+          <ScalarProperty Name="IndicatorId" ColumnName="IndicatorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

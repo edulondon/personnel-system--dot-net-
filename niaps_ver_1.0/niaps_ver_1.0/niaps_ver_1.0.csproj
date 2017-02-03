@@ -1,0 +1,1252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DF91A3F0-0B02-473D-A18F-9FB08DF7AF82}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>niaps_ver_1._0</RootNamespace>
+    <AssemblyName>niaps_ver_1.0</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Mvc">
+      <HintPath>..\packages\Mvc4Futures.4.0.20710.0\lib\net40\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.2\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.1.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0.4\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.1.0\lib\net45\WebMatrix.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\niaps.mdf" />
+    <Content Include="App_Data\niaps_log.ldf">
+      <DependentUpon>niaps.mdf</DependentUpon>
+    </Content>
+    <Content Include="bootstrapTest.aspx" />
+    <Content Include="Content\body.css" />
+    <Content Include="Content\bootstrap-datepicker.css" />
+    <Content Include="Content\bootstrap-datepicker3.css" />
+    <Content Include="Content\bootstrap-mvc-validation.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\js\bootstrap.js" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\jquery-2.0.3.js" />
+    <Content Include="Content\js\jquery-2.0.3.min.js" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\table-images\back.png" />
+    <Content Include="Content\table-images\blurry.jpg" />
+    <Content Include="Content\table-images\botleft.png" />
+    <Content Include="Content\table-images\botright.png" />
+    <Content Include="Content\table-images\gradback.png" />
+    <Content Include="Content\table-images\gradhead.png" />
+    <Content Include="Content\table-images\gradhover.png" />
+    <Content Include="Content\table-images\header.jpg" />
+    <Content Include="Content\table-images\left.png" />
+    <Content Include="Content\table-images\pattern-head.png" />
+    <Content Include="Content\table-images\pattern.gif" />
+    <Content Include="Content\table-images\pattern.png" />
+    <Content Include="Content\table-images\patternb-head.png" />
+    <Content Include="Content\table-images\patternb.png" />
+    <Content Include="Content\table-images\right.png" />
+    <Content Include="Content\themes\base\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="dataSheetUpload.aspx" />
+    <Content Include="dateText.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="employmentRecDataSheetUpload.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="forgotPsw.aspx" />
+    <Content Include="images\Heading1.jpg" />
+    <Content Include="images\Heading1_1.jpg" />
+    <Content Include="images\Heading_current_employment_record.jpg" />
+    <Content Include="images\Heading_education_qualification.jpg" />
+    <Content Include="images\Heading_employment_record.jpg" />
+    <Content Include="images\Heading_next_of_kin.jpg" />
+    <Content Include="images\Heading_personal_details.jpg" />
+    <Content Include="images\NIA House.jpg" />
+    <Content Include="images\NiaLogo.jpg" />
+    <Content Include="newsRoom.aspx" />
+    <Content Include="PrivateWeb\activateReview.aspx" />
+    <Content Include="PrivateWeb\activestaffList.aspx" />
+    <Content Include="PrivateWeb\assetArchive.aspx" />
+    <Content Include="PrivateWeb\assetDetail.aspx" />
+    <Content Include="PrivateWeb\changePsw.aspx" />
+    <Content Include="PrivateWeb\changePsw2.aspx" />
+    <Content Include="PrivateWeb\contacts.aspx" />
+    <Content Include="PrivateWeb\createLeave.aspx" />
+    <Content Include="PrivateWeb\createQuery.aspx" />
+    <Content Include="PrivateWeb\createStaff.aspx" />
+    <Content Include="PrivateWeb\currentEmploymentRecord.aspx" />
+    <Content Include="PrivateWeb\deactivateStaff.aspx" />
+    <Content Include="PrivateWeb\deleteUser.aspx" />
+    <Content Include="PrivateWeb\enterEmploymentRecord.aspx" />
+    <Content Include="PrivateWeb\enterNextOfKinInfo.aspx" />
+    <Content Include="PrivateWeb\enterQualification.aspx" />
+    <Content Include="PrivateWeb\enterStaffPendingLeave.aspx" />
+    <Content Include="PrivateWeb\furtherQualification.aspx" />
+    <Content Include="PrivateWeb\images\images.jpg" />
+    <Content Include="PrivateWeb\inactiveStaffList.aspx" />
+    <Content Include="PrivateWeb\index.aspx" />
+    <Content Include="PrivateWeb\message.aspx" />
+    <Content Include="PrivateWeb\modifyUserPassword.aspx" />
+    <Content Include="PrivateWeb\niaAssetDetails.aspx" />
+    <Content Include="PrivateWeb\niaGoals.aspx" />
+    <Content Include="PrivateWeb\regAsset.aspx" />
+    <Content Include="PrivateWeb\sactivateAppraisal.aspx" />
+    <Content Include="PrivateWeb\sAddIndicator.aspx" />
+    <Content Include="PrivateWeb\schangePsw.aspx" />
+    <Content Include="PrivateWeb\sdeleteUser.aspx" />
+    <Content Include="PrivateWeb\smodifyUserPassword.aspx" />
+    <Content Include="PrivateWeb\staffArchive.aspx" />
+    <Content Include="PrivateWeb\staffDetails.aspx" />
+    <Content Include="PrivateWeb\staffList.aspx" />
+    <Content Include="PrivateWeb\supdateUser.aspx" />
+    <Content Include="PrivateWeb\superAdminDashboard.aspx" />
+    <Content Include="PrivateWeb\sviewUsers.aspx" />
+    <Content Include="PrivateWeb\updateAsset.aspx" />
+    <Content Include="PrivateWeb\updateCurrentStaff.aspx" />
+    <Content Include="PrivateWeb\updateEmploymentRec.aspx" />
+    <Content Include="PrivateWeb\updateEmpRec.aspx" />
+    <Content Include="PrivateWeb\updateLeave.aspx" />
+    <Content Include="PrivateWeb\updateQualification.aspx" />
+    <Content Include="PrivateWeb\updateQuery.aspx" />
+    <Content Include="PrivateWeb\updateQuestion.aspx" />
+    <Content Include="PrivateWeb\updateS.aspx" />
+    <Content Include="PrivateWeb\updateStaff.aspx" />
+    <Content Include="PrivateWeb\updateStaffLeave.aspx" />
+    <Content Include="PrivateWeb\updateUser.aspx" />
+    <Content Include="PrivateWeb\uploadedfiles\viewUsers.aspx" />
+    <Content Include="PrivateWeb\uploadPassport.aspx" />
+    <Content Include="default.Master" />
+    <Content Include="PrivateWeb\admin2.Master" />
+    <Content Include="PrivateWeb\viewCurrentStaffRec.aspx" />
+    <Content Include="PrivateWeb\viewLeave.aspx" />
+    <Content Include="PrivateWeb\viewQualification.aspx" />
+    <Content Include="PrivateWeb\viewQuery.aspx" />
+    <Content Include="PrivateWeb\viewQuestion.aspx" />
+    <Content Include="PrivateWeb\viewStaffReview.aspx" />
+    <Content Include="PrivateWeb\viewUsers.aspx" />
+    <Content Include="PublicWeb\changePsw.aspx" />
+    <Content Include="PublicWeb\leave.aspx" />
+    <Content Include="PublicWeb\logout.aspx" />
+    <Content Include="PublicWeb\message.aspx" />
+    <Content Include="PublicWeb\newsRoom.aspx" />
+    <Content Include="PublicWeb\postNews.aspx" />
+    <Content Include="PublicWeb\postReviewQuestions.aspx" />
+    <Content Include="PublicWeb\query.aspx" />
+    <Content Include="PublicWeb\reviewMessage.aspx" />
+    <Content Include="PublicWeb\secChangePsw.aspx" />
+    <Content Include="PublicWeb\staffReview.aspx" />
+    <Content Include="PublicWeb\staffUpdateAppraisal.aspx" />
+    <Content Include="PublicWeb\update.aspx" />
+    <Content Include="PublicWeb\updateAppraisal.aspx" />
+    <Content Include="PublicWeb\updateNews.aspx" />
+    <Content Include="PublicWeb\updateQuestion.aspx" />
+    <Content Include="PublicWeb\user2.Master" />
+    <EntityDeploy Include="niapsDatabase.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>niapsDatabase.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="niapsDatabase.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>niapsDatabase.edmx</DependentUpon>
+      <LastGenOutput>niapsDatabase.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="niapsDatabase.edmx.diagram">
+      <DependentUpon>niapsDatabase.edmx</DependentUpon>
+    </Content>
+    <Content Include="niapsDatabase.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>niapsDatabase.edmx</DependentUpon>
+      <LastGenOutput>niapsDatabase.cs</LastGenOutput>
+    </Content>
+    <Content Include="PrivateWeb\superAdmin.Master" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="PrivateWeb\viewAsset.aspx" />
+    <Content Include="PrivateWeb\viewNiaAsset.aspx" />
+    <Content Include="PublicWeb\contacts.aspx" />
+    <Content Include="PublicWeb\index.aspx" />
+    <Content Include="PublicWeb\niaGoals.aspx" />
+    <Content Include="PublicWeb\viewQuery.aspx" />
+    <Content Include="PublicWeb\viewQuestion.aspx" />
+    <Content Include="PublicWeb\viewStaffRecord.aspx" />
+    <Content Include="recordUpload.aspx" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\html5shiv.js" />
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js" />
+    <Content Include="Scripts\jquery-2.1.0.js" />
+    <Content Include="Scripts\jquery-2.1.0.min.js" />
+    <Content Include="Scripts\jquery-migrate-1.2.1.js" />
+    <Content Include="Scripts\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.4.js" />
+    <Content Include="Scripts\jquery-ui-1.10.4.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive-custom-for-bootstrap.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.az.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.et.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fa.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.gl.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kk.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.no.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ua.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.vi.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="staffRecDataSheetUpload.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="activateReview.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="adminUser.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="answerToQuestion.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BootstrapBundleConfig.cs" />
+    <Compile Include="App_Start\ExampleLayoutsRouteConfig.cs" />
+    <Compile Include="assetRecord.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="assetUpdateHistory.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BootstrapSupport\ControlGroupExtensions.cs" />
+    <Compile Include="BootstrapSupport\ViewHelperExtensions.cs" />
+    <Compile Include="bootstrapTest.aspx.cs">
+      <DependentUpon>bootstrapTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bootstrapTest.aspx.designer.cs">
+      <DependentUpon>bootstrapTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\BootstrapBaseController.cs" />
+    <Compile Include="currentStaffRecord.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dataSheetUpload.aspx.cs">
+      <DependentUpon>dataSheetUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dataSheetUpload.aspx.designer.cs">
+      <DependentUpon>dataSheetUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dateText.aspx.cs">
+      <DependentUpon>dateText.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dateText.aspx.designer.cs">
+      <DependentUpon>dateText.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.Master.cs">
+      <DependentUpon>default.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.Master.designer.cs">
+      <DependentUpon>default.Master</DependentUpon>
+    </Compile>
+    <Compile Include="employmentRecDataSheetUpload.aspx.cs">
+      <DependentUpon>employmentRecDataSheetUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="employmentRecDataSheetUpload.aspx.designer.cs">
+      <DependentUpon>employmentRecDataSheetUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="employmentRecord.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="forgotPsw.aspx.cs">
+      <DependentUpon>forgotPsw.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgotPsw.aspx.designer.cs">
+      <DependentUpon>forgotPsw.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="indicator.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="insuranceCompany.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="issuedQuery.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="leave.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="leaveDay.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LGA.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationRoutes\INavigationRouteFilter.cs" />
+    <Compile Include="NavigationRoutes\NamedRoute.cs" />
+    <Compile Include="NavigationRoutes\NavigationExtensions.cs" />
+    <Compile Include="NavigationRoutes\NavigationRouteConfigurationExtensions.cs" />
+    <Compile Include="NavigationRoutes\NavigationRouteFilter.cs" />
+    <Compile Include="news.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="newsRoom.aspx.cs">
+      <DependentUpon>newsRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="newsRoom.aspx.designer.cs">
+      <DependentUpon>newsRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="niapsDatabase.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>niapsDatabase.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="niapsDatabase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="niapsDatabase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>niapsDatabase.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="niapsValidation.cs" />
+    <Compile Include="pendingLeave.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\activateReview.aspx.cs">
+      <DependentUpon>activateReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\activateReview.aspx.designer.cs">
+      <DependentUpon>activateReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\activestaffList.aspx.cs">
+      <DependentUpon>activestaffList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\activestaffList.aspx.designer.cs">
+      <DependentUpon>activestaffList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\admin.Master.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\admin.Master.designer.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\admin2.Master.cs">
+      <DependentUpon>admin2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\admin2.Master.designer.cs">
+      <DependentUpon>admin2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\assetArchive.aspx.cs">
+      <DependentUpon>assetArchive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\assetArchive.aspx.designer.cs">
+      <DependentUpon>assetArchive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\assetDetail.aspx.cs">
+      <DependentUpon>assetDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\assetDetail.aspx.designer.cs">
+      <DependentUpon>assetDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\changePsw.aspx.cs">
+      <DependentUpon>changePsw.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\changePsw.aspx.designer.cs">
+      <DependentUpon>changePsw.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\changePsw2.aspx.cs">
+      <DependentUpon>changePsw2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\changePsw2.aspx.designer.cs">
+      <DependentUpon>changePsw2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\contacts.aspx.cs">
+      <DependentUpon>contacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\contacts.aspx.designer.cs">
+      <DependentUpon>contacts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\createLeave.aspx.cs">
+      <DependentUpon>createLeave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\createLeave.aspx.designer.cs">
+      <DependentUpon>createLeave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\createQuery.aspx.cs">
+      <DependentUpon>createQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\createQuery.aspx.designer.cs">
+      <DependentUpon>createQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\createStaff.aspx.cs">
+      <DependentUpon>createStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\createStaff.aspx.designer.cs">
+      <DependentUpon>createStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\currentEmploymentRecord.aspx.cs">
+      <DependentUpon>currentEmploymentRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\currentEmploymentRecord.aspx.designer.cs">
+      <DependentUpon>currentEmploymentRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\deactivateStaff.aspx.cs">
+      <DependentUpon>deactivateStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\deactivateStaff.aspx.designer.cs">
+      <DependentUpon>deactivateStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\deleteUser.aspx.cs">
+      <DependentUpon>deleteUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\deleteUser.aspx.designer.cs">
+      <DependentUpon>deleteUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\enterEmploymentRecord.aspx.cs">
+      <DependentUpon>enterEmploymentRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\enterEmploymentRecord.aspx.designer.cs">
+      <DependentUpon>enterEmploymentRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\enterNextOfKinInfo.aspx.cs">
+      <DependentUpon>enterNextOfKinInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\enterNextOfKinInfo.aspx.designer.cs">
+      <DependentUpon>enterNextOfKinInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\enterQualification.aspx.cs">
+      <DependentUpon>enterQualification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\enterQualification.aspx.designer.cs">
+      <DependentUpon>enterQualification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\enterStaffPendingLeave.aspx.cs">
+      <DependentUpon>enterStaffPendingLeave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\enterStaffPendingLeave.aspx.designer.cs">
+      <DependentUpon>enterStaffPendingLeave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\furtherQualification.aspx.cs">
+      <DependentUpon>furtherQualification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\furtherQualification.aspx.designer.cs">
+      <DependentUpon>furtherQualification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\inactiveStaffList.aspx.cs">
+      <DependentUpon>inactiveStaffList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\inactiveStaffList.aspx.designer.cs">
+      <DependentUpon>inactiveStaffList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\message.aspx.cs">
+      <DependentUpon>message.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\message.aspx.designer.cs">
+      <DependentUpon>message.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\modifyUserPassword.aspx.cs">
+      <DependentUpon>modifyUserPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\modifyUserPassword.aspx.designer.cs">
+      <DependentUpon>modifyUserPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\niaAssetDetails.aspx.cs">
+      <DependentUpon>niaAssetDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\niaAssetDetails.aspx.designer.cs">
+      <DependentUpon>niaAssetDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\niaGoals.aspx.cs">
+      <DependentUpon>niaGoals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\niaGoals.aspx.designer.cs">
+      <DependentUpon>niaGoals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\regAsset.aspx.cs">
+      <DependentUpon>regAsset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\regAsset.aspx.designer.cs">
+      <DependentUpon>regAsset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\sactivateAppraisal.aspx.cs">
+      <DependentUpon>sactivateAppraisal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\sactivateAppraisal.aspx.designer.cs">
+      <DependentUpon>sactivateAppraisal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\sAddIndicator.aspx.cs">
+      <DependentUpon>sAddIndicator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\sAddIndicator.aspx.designer.cs">
+      <DependentUpon>sAddIndicator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\schangePsw.aspx.cs">
+      <DependentUpon>schangePsw.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\schangePsw.aspx.designer.cs">
+      <DependentUpon>schangePsw.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\sdeleteUser.aspx.cs">
+      <DependentUpon>sdeleteUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\sdeleteUser.aspx.designer.cs">
+      <DependentUpon>sdeleteUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\smodifyUserPassword.aspx.cs">
+      <DependentUpon>smodifyUserPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\smodifyUserPassword.aspx.designer.cs">
+      <DependentUpon>smodifyUserPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\staffArchive.aspx.cs">
+      <DependentUpon>staffArchive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\staffArchive.aspx.designer.cs">
+      <DependentUpon>staffArchive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\staffDetails.aspx.cs">
+      <DependentUpon>staffDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\staffDetails.aspx.designer.cs">
+      <DependentUpon>staffDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\staffList.aspx.cs">
+      <DependentUpon>staffList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\staffList.aspx.designer.cs">
+      <DependentUpon>staffList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\supdateUser.aspx.cs">
+      <DependentUpon>supdateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\supdateUser.aspx.designer.cs">
+      <DependentUpon>supdateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\superAdmin.Master.cs">
+      <DependentUpon>superAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\superAdmin.Master.designer.cs">
+      <DependentUpon>superAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\superAdminDashboard.aspx.cs">
+      <DependentUpon>superAdminDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\superAdminDashboard.aspx.designer.cs">
+      <DependentUpon>superAdminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\sviewUsers.aspx.cs">
+      <DependentUpon>sviewUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\sviewUsers.aspx.designer.cs">
+      <DependentUpon>sviewUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\updateAsset.aspx.cs">
+      <DependentUpon>updateAsset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\updateAsset.aspx.designer.cs">
+      <DependentUpon>updateAsset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\updateCurrentStaff.aspx.cs">
+      <DependentUpon>updateCurrentStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\updateCurrentStaff.aspx.designer.cs">
+      <DependentUpon>updateCurrentStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\updateEmploymentRec.aspx.cs">
+      <DependentUpon>updateEmploymentRec.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\updateEmploymentRec.aspx.designer.cs">
+      <DependentUpon>updateEmploymentRec.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\updateEmpRec.aspx.cs">
+      <DependentUpon>updateEmpRec.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\updateEmpRec.aspx.designer.cs">
+      <DependentUpon>updateEmpRec.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\updateLeave.aspx.cs">
+      <DependentUpon>updateLeave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\updateLeave.aspx.designer.cs">
+      <DependentUpon>updateLeave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\updateQualification.aspx.cs">
+      <DependentUpon>updateQualification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\updateQualification.aspx.designer.cs">
+      <DependentUpon>updateQualification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\updateQuery.aspx.cs">
+      <DependentUpon>updateQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\updateQuery.aspx.designer.cs">
+      <DependentUpon>updateQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\updateQuestion.aspx.cs">
+      <DependentUpon>updateQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\updateQuestion.aspx.designer.cs">
+      <DependentUpon>updateQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\updateS.aspx.cs">
+      <DependentUpon>updateS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\updateS.aspx.designer.cs">
+      <DependentUpon>updateS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\updateStaff.aspx.cs">
+      <DependentUpon>updateStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\updateStaff.aspx.designer.cs">
+      <DependentUpon>updateStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\updateStaffLeave.aspx.cs">
+      <DependentUpon>updateStaffLeave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\updateStaffLeave.aspx.designer.cs">
+      <DependentUpon>updateStaffLeave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\updateUser.aspx.cs">
+      <DependentUpon>updateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\updateUser.aspx.designer.cs">
+      <DependentUpon>updateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\uploadedfiles\viewUsers.aspx.cs">
+      <DependentUpon>viewUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\uploadedfiles\viewUsers.aspx.designer.cs">
+      <DependentUpon>viewUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\uploadHandler.ashx.cs">
+      <DependentUpon>uploadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\uploadPassport.aspx.cs">
+      <DependentUpon>uploadPassport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\uploadPassport.aspx.designer.cs">
+      <DependentUpon>uploadPassport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\viewAsset.aspx.cs">
+      <DependentUpon>viewAsset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\viewAsset.aspx.designer.cs">
+      <DependentUpon>viewAsset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\viewCurrentStaffRec.aspx.cs">
+      <DependentUpon>viewCurrentStaffRec.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\viewCurrentStaffRec.aspx.designer.cs">
+      <DependentUpon>viewCurrentStaffRec.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\viewLeave.aspx.cs">
+      <DependentUpon>viewLeave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\viewLeave.aspx.designer.cs">
+      <DependentUpon>viewLeave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\viewNiaAsset.aspx.cs">
+      <DependentUpon>viewNiaAsset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\viewNiaAsset.aspx.designer.cs">
+      <DependentUpon>viewNiaAsset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\viewQualification.aspx.cs">
+      <DependentUpon>viewQualification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\viewQualification.aspx.designer.cs">
+      <DependentUpon>viewQualification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\viewQuery.aspx.cs">
+      <DependentUpon>viewQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\viewQuery.aspx.designer.cs">
+      <DependentUpon>viewQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\viewQuestion.aspx.cs">
+      <DependentUpon>viewQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\viewQuestion.aspx.designer.cs">
+      <DependentUpon>viewQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\viewStaffReview.aspx.cs">
+      <DependentUpon>viewStaffReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\viewStaffReview.aspx.designer.cs">
+      <DependentUpon>viewStaffReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateWeb\viewUsers.aspx.cs">
+      <DependentUpon>viewUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivateWeb\viewUsers.aspx.designer.cs">
+      <DependentUpon>viewUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicWeb\changePsw.aspx.cs">
+      <DependentUpon>changePsw.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\changePsw.aspx.designer.cs">
+      <DependentUpon>changePsw.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\contacts.aspx.cs">
+      <DependentUpon>contacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\contacts.aspx.designer.cs">
+      <DependentUpon>contacts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\leave.aspx.cs">
+      <DependentUpon>leave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\leave.aspx.designer.cs">
+      <DependentUpon>leave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\message.aspx.cs">
+      <DependentUpon>message.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\message.aspx.designer.cs">
+      <DependentUpon>message.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\newsRoom.aspx.cs">
+      <DependentUpon>newsRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\newsRoom.aspx.designer.cs">
+      <DependentUpon>newsRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\niaGoals.aspx.cs">
+      <DependentUpon>niaGoals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\niaGoals.aspx.designer.cs">
+      <DependentUpon>niaGoals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\postNews.aspx.cs">
+      <DependentUpon>postNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\postNews.aspx.designer.cs">
+      <DependentUpon>postNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\postReviewQuestions.aspx.cs">
+      <DependentUpon>postReviewQuestions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\postReviewQuestions.aspx.designer.cs">
+      <DependentUpon>postReviewQuestions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\query.aspx.cs">
+      <DependentUpon>query.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\query.aspx.designer.cs">
+      <DependentUpon>query.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\reviewMessage.aspx.cs">
+      <DependentUpon>reviewMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\reviewMessage.aspx.designer.cs">
+      <DependentUpon>reviewMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\secChangePsw.aspx.cs">
+      <DependentUpon>secChangePsw.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\secChangePsw.aspx.designer.cs">
+      <DependentUpon>secChangePsw.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\staffReview.aspx.cs">
+      <DependentUpon>staffReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\staffReview.aspx.designer.cs">
+      <DependentUpon>staffReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\staffUpdateAppraisal.aspx.cs">
+      <DependentUpon>staffUpdateAppraisal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\staffUpdateAppraisal.aspx.designer.cs">
+      <DependentUpon>staffUpdateAppraisal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\update.aspx.cs">
+      <DependentUpon>update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\update.aspx.designer.cs">
+      <DependentUpon>update.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\updateAppraisal.aspx.cs">
+      <DependentUpon>updateAppraisal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\updateAppraisal.aspx.designer.cs">
+      <DependentUpon>updateAppraisal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\updateNews.aspx.cs">
+      <DependentUpon>updateNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\updateNews.aspx.designer.cs">
+      <DependentUpon>updateNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\updateQuestion.aspx.cs">
+      <DependentUpon>updateQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\updateQuestion.aspx.designer.cs">
+      <DependentUpon>updateQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\user.Master.cs">
+      <DependentUpon>user.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\user.Master.designer.cs">
+      <DependentUpon>user.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\user2.Master.cs">
+      <DependentUpon>user2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\user2.Master.designer.cs">
+      <DependentUpon>user2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\viewQuery.aspx.cs">
+      <DependentUpon>viewQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\viewQuery.aspx.designer.cs">
+      <DependentUpon>viewQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\viewQuestion.aspx.cs">
+      <DependentUpon>viewQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\viewQuestion.aspx.designer.cs">
+      <DependentUpon>viewQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicWeb\viewStaffRecord.aspx.cs">
+      <DependentUpon>viewStaffRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicWeb\viewStaffRecord.aspx.designer.cs">
+      <DependentUpon>viewStaffRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="qualification.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="query.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="question.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="recordUpload.aspx.cs">
+      <DependentUpon>recordUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recordUpload.aspx.designer.cs">
+      <DependentUpon>recordUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="staffNextOfKin.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="staffRecDataSheetUpload.aspx.cs">
+      <DependentUpon>staffRecDataSheetUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="staffRecDataSheetUpload.aspx.designer.cs">
+      <DependentUpon>staffRecDataSheetUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="staffRecord.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="staffReview.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="staffUpdateHistory.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="state.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="truncString.cs" />
+    <Compile Include="user.cs">
+      <DependentUpon>niapsDatabase.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="PrivateWeb\admin.Master" />
+    <Content Include="PublicWeb\user.Master" />
+    <Content Include="PrivateWeb\uploadHandler.ashx" />
+    <Content Include="Scripts\jquery-2.1.0.min.map" />
+    <Content Include="views\shared\_html5shiv.cshtml" />
+    <Content Include="views\shared\Index.cshtml" />
+    <Content Include="views\shared\Details.cshtml" />
+    <Content Include="views\shared\Create.cshtml" />
+    <Content Include="views\shared\_validationSummary.cshtml" />
+    <Content Include="views\shared\_BootstrapLayout.narrow.cshtml" />
+    <Content Include="views\shared\_BootstrapLayout.empty.cshtml" />
+    <Content Include="views\shared\_BootstrapLayout.basic.cshtml" />
+    <Content Include="views\shared\_alerts.cshtml" />
+    <Content Include="views\_ViewStart.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="temp\" />
+    <Folder Include="upload\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:30091/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="default.master.cs" Inherits="niaps_ver_1._0._default" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content ="width=device-width, initial-scale=1.0"/>
+    <title>NIAPS</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/style.css" rel="stylesheet" />
+    
+</head>
+<body style="background-color:forestgreen; color:black;">
+        <div class="navbar navbar-static-top navbar-inner navbar-inverse list-unstyled">
+		        <div class="container">
+					  <div class="container">
+                          <div class="col-lg-6">
+					   <a href="#" class="brand h1" style="color:lawngreen"><h1>NIA Personnel System</h1></a>
+                              </div>
+                          <div class="col-lg-6">
+					    <a href="#" class="brand pull-right navbar-static-top"><img src="../images/NiaLogo.jpg" style="height: 103px; width: 107px" /></a>
+                          </div>
+						 </div>
+					       <div class = "navbar-collapse navHeaderCollapse">
+						   
+						   
+						</div>
+					  
+				  </div>
+		</div>	
+    <div class="container center-block" style="background-color:aliceblue; border-top-right-radius:2em; border-top-left-radius:2em">		
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+   </div>
+    <footer class="navebar navbar-fixed-bottom">
+            <p style="color:white; background-color:black" class="text-center"> Copyright &copy; 2014, Nigeria Insurers Association, All Right Reserved</p>
+        </footer>
+  
+</body>
+</html>

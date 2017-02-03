@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="user2.master.cs" Inherits="niaps_ver_1._0.PublicWeb.user2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>NIAPS</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />
+</head>
+    <body style="background-color:forestgreen; color:black;">
+       <div class="navbar navbar-static-top navbar-inner navbar-inverse list-unstyled">
+				      <div class="container">
+					  <div class="container">
+                          <div class="col-lg-6">
+					   <a href="#" class="brand h1" style="color:lawngreen"><h1>NIA Personnel System</h1></a>
+                              </div>
+                          <div class="col-lg-6">
+					    <a href="#" class="brand pull-right navbar-static-top"><img src="../images/NiaLogo.jpg" style="height: 103px; width: 107px" /></a>
+                          </div>
+						 </div>
+						 
+					       <div class = "navbar-collapse navHeaderCollapse">
+
+        <ul class="nav navbar-nav navbar-left">
+            
+            <li><a href="postNews.aspx">Post News</a></li>
+            <li><a href="updateNews.aspx">Update News</a></li>
+            <li><a href="secChangePsw.aspx">Change Password</a></li>
+            <li><a href="logout.aspx">Logout</a></li>
+        </ul>
+   </div>
+					  
+				  </div>
+		</div>			
+  <div class="container center-block" style="background-color:aliceblue; border-top-right-radius:2em; border-top-left-radius:2em">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+        <footer class="navebar navbar-fixed-bottom">
+            <p style="color:white; background-color:black" class="text-center"> Copyright &copy; 2014, Nigeria Insurers Association, All Right Reserved</p>
+        </footer>
+    <script src="../Content/js/bootstrap.js"></script>
+    <script src="../Content/js/bootstrap.min.js"></script>
+    <script src="../Content/js/jquery-2.0.3.js"></script>
+    <script src="../Content/js/jquery-2.0.3.min.js"></script>
+</body>
+</html>
